@@ -10,8 +10,8 @@ public class Systemfunction {
 		
 		ObjectMapper mapperObj = new ObjectMapper();
 		program = new Accountservices();
-	    program.addaccounts("1",new Accountdetails("bob","dylan","3255" ));
-		program.addaccounts("2", new Accountdetails("Mike","Mathers","54545"));
+	    program.addaccounts(new Accountdetails("bob","dylan","3255" ));
+		program.addaccounts(new Accountdetails("Mike","Mathers","54545"));
 		try {
 			String jsonStr = mapperObj.writerWithDefaultPrettyPrinter().writeValueAsString(program); 
 			System.out.println(jsonStr);
@@ -27,7 +27,7 @@ public class Systemfunction {
 	}
 	public void printbyKey(String key) {
 		ObjectMapper mapperObj = new ObjectMapper();
-		Accountdetails accountd = program.getAccount("2");
+		Accountdetails accountd = program.getAccount();
 		try {
 			String jsonStr = mapperObj.writerWithDefaultPrettyPrinter().writeValueAsString(accountd); 
 			System.out.println(jsonStr);
@@ -36,7 +36,7 @@ public class Systemfunction {
 			e.printStackTrace();
 		
 		}
-		//System.out.println(accountd.getFirstName() + " "  + accountd.getLastName() + " " + accountd.getAccountNumber());
+		
 		
 		
 	}
