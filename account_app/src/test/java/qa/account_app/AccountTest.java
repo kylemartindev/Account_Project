@@ -2,16 +2,18 @@ package qa.account_app;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import accountsystem.Accountdetails;
 import accountsystem.Accountservices;
+import accountsystem.Systemfunction;
 
 
 
 public class AccountTest {
 	
-	
+
 	
 	@Test
 	public void newaccount() {
@@ -19,12 +21,27 @@ public class AccountTest {
 	   
 	 
 	   Accountservices hash = new Accountservices();
-	   hash.addaccounts("1",new Accountdetails("bob","dylan","3255" ));
-	   hash.addaccounts("2", new Accountdetails("Mike","Mathers","54545"));
+	   hash.addaccounts(new Accountdetails("bob","dylan","3255" ));
+	   hash.addaccounts(new Accountdetails("Mike","Mathers","54545"));
+	  
 
 	    assertEquals (2, hash.getAccountsMap().size());
 	    
 	 
+	}
+	
+	@Test
+	public void testfirstnamecount() {
+		
+		
+		  Accountservices hash = new Accountservices();
+		   hash.addaccounts(new Accountdetails("bob","dylan","3255" ));
+		   hash.addaccounts(new Accountdetails("bob","Mathers","54545"));
+		   //hash.getFirstnameCounter("bob");
+		 
+		assertEquals(2, hash.getFirstnameCounter("bob"));
+		
+		
 	}
 	
 	

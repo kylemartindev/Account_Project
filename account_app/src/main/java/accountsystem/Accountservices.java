@@ -1,41 +1,52 @@
 package accountsystem;
 
 import java.util.*;
+import java.util.stream.Collectors;
 public class Accountservices {
 	
-public HashMap<String,Accountdetails> accounts;
+private HashMap<Integer,Accountdetails> accounts;
 private static int count = 0;
 
 public Accountservices() {
 	
-	accounts = new HashMap<String, Accountdetails>();
+	accounts = new HashMap<Integer, Accountdetails>();
 	
 }
 
-public void addaccounts(String key, Accountdetails account) {
-	this.accounts.put(key, account);
-	
+public void addaccounts (Accountdetails account) {
+	accounts.put(count, account);
+	count++;
 }
 
-public Accountdetails getAccount(String key) {
+public Accountdetails getAccount() {
 
-  return this.accounts.get(key);
+  return this.accounts.get(count);
  
 
 
 }
 
-public HashMap<String, Accountdetails> getAccountsMap() {
+public HashMap<Integer, Accountdetails> getAccountsMap() {
 	return accounts;
 }
 
-public void setAccountsMap(HashMap<String, Accountdetails> accounts) {
+public void setAccountsMap(HashMap<Integer, Accountdetails> accounts) {
 	this.accounts = accounts;
 }
 
 
 
+
+public int getFirstnameCounter(String name) {
+	
+	
+return (int )accounts.values().stream().filter(Accountdetails -> Accountdetails.getFirstName().equals(name)).count();
+
+	
 }
 
+
+
+}
 
 
