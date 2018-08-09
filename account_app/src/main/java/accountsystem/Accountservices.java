@@ -1,6 +1,7 @@
 package accountsystem;
 
 import java.util.*;
+import java.util.stream.Collectors;
 public class Accountservices {
 	
 private HashMap<Integer,Accountdetails> accounts;
@@ -35,7 +36,17 @@ public void setAccountsMap(HashMap<Integer, Accountdetails> accounts) {
 
 
 
+
+public int getFirstnameCounter(String name) {
+	
+	
+return (int )accounts.values().stream().filter(Accountdetails -> Accountdetails.getFirstName().equals(name)).collect(Collectors.toList()).size();
+
+	
 }
 
+
+
+}
 
 

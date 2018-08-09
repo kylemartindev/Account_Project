@@ -36,10 +36,10 @@ public class AccountTest {
 		
 		  Accountservices hash = new Accountservices();
 		   hash.addaccounts(new Accountdetails("bob","dylan","3255" ));
-		   hash.addaccounts(new Accountdetails("Mike","Mathers","54545"));
-		   
+		   hash.addaccounts(new Accountdetails("bob","Mathers","54545"));
+		   //hash.getFirstnameCounter("bob");
 		 
-		assertEquals(2, hash.getAccountsMap().values().toString());
+		assertEquals(2, hash.getFirstnameCounter("bob"));
 		
 		
 	}

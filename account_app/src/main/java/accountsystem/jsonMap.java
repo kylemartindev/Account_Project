@@ -13,8 +13,8 @@ public static void main (String[] args)  {
 	 
 	ObjectMapper mapperObj = new ObjectMapper();
 	Accountservices hash = new Accountservices();
-	   hash.addaccounts("1",new Accountdetails("bob","dylan","3255" ));
-	   hash.addaccounts("2", new Accountdetails("Mike","Mathers","54545"));
+	   hash.addaccounts(new Accountdetails("bob","dylan","3255" ));
+	   hash.addaccounts(new Accountdetails("Mike","Mathers","54545"));
 	 
 	try {
 		String jsonStr = mapperObj.writerWithDefaultPrettyPrinter().writeValueAsString(hash); 
