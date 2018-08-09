@@ -40,7 +40,7 @@ public void setAccountsMap(HashMap<Integer, Accountdetails> accounts) {
 public int getFirstnameCounter(String name) {
 	
 	
-return (int )accounts.values().stream().filter(Accountdetails -> Accountdetails.getFirstName().equals(name)).collect(Collectors.toList()).size();
+return (int )accounts.values().stream().filter(Accountdetails -> Accountdetails.getFirstName().equals(name)).count();
 
 	
 }
